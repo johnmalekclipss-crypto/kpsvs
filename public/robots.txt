@@ -1,0 +1,5 @@
+# Robots.txt for Kedar Prasad Sushil Verma Sarraf (KP SVS)
+User-agent: *
+Allow: /
+
+Sitemap: https://kpsvs.in/sitemap.xml

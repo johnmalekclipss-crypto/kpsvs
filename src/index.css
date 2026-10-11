@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cinzel', Georgia, serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-gold-50: #fdfaf3;
+  --color-gold-100: #f9f0db;
+  --color-gold-200: #f2deb4;
+  --color-gold-300: #e8c684;
+  --color-gold-400: #d4af37;
+  --color-gold-500: #bf9828;
+  --color-gold-600: #a47d1e;
+  --color-gold-700: #835e19;
+  --color-gold-800: #6b4b19;
+  --color-gold-900: #573c17;
+
+  --color-obsidian-950: #08070a;
+  --color-obsidian-900: #0e0d12;
+  --color-obsidian-800: #16151c;
+  --color-obsidian-700: #1e1d26;
+  --color-obsidian-600: #292834;
+
+  --color-ivory-50: #fffefb;
+  --color-ivory-100: #faf7ef;
+  --color-ivory-200: #f4eedd;
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #0b0a0e;
+  color: #ede7dc;
+  overflow-x: hidden;
+  margin: 0;
+  width: 100%;
+  position: relative;
+}
+
+/* Prevent auto-zoom on iOS inputs while keeping text crisp */
+@media screen and (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Hide scrollbars for touch swipe navigation */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0c10;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2733;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Luxury Metallic Gold Utilities */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fff2cc 0%, #e2be5f 30%, #d4af37 60%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-subtle {
+  background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+}
+
+.bg-gold-shimmer {
+  background: linear-gradient(120deg, #d4af37 0%, #ffeaa7 50%, #c59b27 100%);
+}
+
+.border-gold-subtle {
+  border-color: rgba(212, 175, 55, 0.22);
+}
+
+.border-gold-glow {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+.gold-glow {
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+}
+
+.gold-glow-lg {
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.28);
+}
+
+/* Glassmorphism surfaces */
+.glass-panel {
+  background: rgba(18, 17, 23, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.14);
+}
+
+/* Royal Indian filigree ornament lines */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.ornament-divider::before,
+.ornament-divider::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  max-width: 120px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+}
+
+/* Subtle Shimmer keyframe */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 3.5s infinite;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
